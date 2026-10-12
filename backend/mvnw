@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+PRG="$0"
+DIR=$(dirname "$PRG")
+if [ -f "$DIR/../.tools/apache-maven-3.9.6/bin/mvn" ]; then
+    exec "$DIR/../.tools/apache-maven-3.9.6/bin/mvn" "$@"
+else
+    exec mvn "$@"
+fi
